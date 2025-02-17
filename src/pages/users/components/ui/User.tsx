@@ -7,6 +7,6 @@ interface UserProps {
 
 export const User = ({ user }: UserProps) => {
   return (
-    <div>User: {user.email} {user.name} {user.id}</div>
+    <div>User: {user?.email} {user?.name} {user?.id}</div>
   )
 }

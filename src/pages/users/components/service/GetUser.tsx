@@ -14,13 +14,13 @@ const GetUser = ({
     queryKey: [`user-${id}`],
     queryFn: () => getOne(UserDTO, id),
   });
-
+  
   if (isLoading) {
     return "Loading...";
   }
 
   if (isError) {
-    return "Error...";
+    return "Error user...";
   }
   
   return children(data);

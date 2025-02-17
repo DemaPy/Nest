@@ -20,7 +20,7 @@ const GetCampaign = ({
   }
 
   if (isError) {
-    return "Error...";
+    return "Error campaign...";
   }
   
   return children(data);

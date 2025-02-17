@@ -1,6 +1,12 @@
-export const api = async (url: string, options?: any) => {
+export const api = async <T,>(url: string, options?: RequestInit): Promise<T> => {
   try {
-    const response = await fetch(url, options);
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        ...options?.headers,
+        Authorization: "Bearer " + localStorage.getItem("accessToken")
+      }
+    });
     if (!response.ok) {
       throw new Error(response.statusText);
     }

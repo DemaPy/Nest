@@ -18,7 +18,7 @@ const GetCampaigns = ({
   }
 
   if (isError) {
-    return "Error...";
+    return "Error campaigns...";
   }
   return children(data ?? []);
 };

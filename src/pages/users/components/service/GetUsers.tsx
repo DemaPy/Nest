@@ -18,7 +18,7 @@ const GetUsers = ({
   }
 
   if (isError) {
-    return "Error...";
+    return "Error users...";
   }
   return children(data ?? []);
 };

@@ -12,7 +12,7 @@ const Users = () => {
           </SharedComponents.List>
         )}
       </ServiceComponents.GetUsers>
-      <ServiceComponents.GetUser id="2">
+      <ServiceComponents.GetUser id="1">
         {(user) => <UiComponents.User user={user} />}
       </ServiceComponents.GetUser>
     </>

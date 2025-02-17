@@ -6,5 +6,5 @@ export async function getOne(
   DTO: (data: BackendResponse) => CampaignInterface | undefined,
   id: CampaignInterface["id"]
 ): Promise<CampaignInterface | undefined> {
-  return DTO(await api(`http://localhost:3000/users/${id}`));
+  return DTO(await api(`http://localhost:3000/campaigns/${id}`));
 }
