@@ -23,13 +23,14 @@ const JobPortals = () => {
     label: "Angular",
     isActive: false,
   }])
-  const [jobPortal, setPortal] = useState()
+  const [jobPortal, setPortal] = useState<{ id: string, label: string, baseUrl: string, parsing: any[] } | null>(null)
   const { data, isError, isLoading } = useQuery({
     queryKey: [`jobPortals`],
-    queryFn: () => api(`http://localhost:3000/job-portal/`),
+    queryFn: () => api<{ id: string, label: string, baseUrl: string, parsing: any[] }[]>(`http://localhost:3000/job-portal/`),
   });
   if (isError) return "Error"
   if (isLoading) return "Loading"
+  if (!data) return "No data found"
 
   const isNoData = !data.length;
 
@@ -127,9 +128,6 @@ function CreateJobPortal() {
     },
     mutationFn: () =>
       api(`http://localhost:3000/job-portal/`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: JSON.stringify({ label, baseUrl }),
         method: "POST",
       }),

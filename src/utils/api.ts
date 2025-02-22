@@ -4,7 +4,6 @@ export const api = async <T,>(url: string, options?: RequestInit): Promise<T> =>
       ...options,
       headers: {
         ...options?.headers,
-        Authorization: "Bearer " + localStorage.getItem("accessToken")
       }
     });
     if (!response.ok) {
