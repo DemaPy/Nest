@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import { AuthLayout } from "../pages/auth/layouts/AuthLayout";
 import { VerifyEmail, Register } from "../pages/auth/pages";
+import Resume from "../pages/resume";
+import Dashboard from "../pages/dashboard";
 
 const routes = createRoutesFromElements(
   <Route>
@@ -16,7 +18,8 @@ const routes = createRoutesFromElements(
       <Route path="verify-email" element={<VerifyEmail />} />
     </Route>
 
-    <Route path="dashboard" element={<div>Dashboard</div>} />
+    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="resume" element={<Resume />} />
   </Route>
 );
 
